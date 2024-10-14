@@ -1,0 +1,264 @@
+:root{
+    --Primario: #edf3f5;
+    --Secundario: #1265b9;
+    --SecundarioOscuro: #222487;
+    --Oscuro: #242023;
+
+    --Blanco: #fff;
+    --Negro: #000000;
+    --Gris: #e1e1e1;
+
+    --FuenteHeading: "PT Sans", sans-serif;
+    --FuenteParrafo: "Open Sans", sans-serif;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--FuenteParrafo);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* GLOBALES */
+
+.contenedor{
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3{
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* Ultilidades */
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+/* HEADER */ 
+
+.header{
+    background-image: url(../img/banner.jpg);
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.header__texto{
+    text-align: center;
+    margin-top: 15rem;
+    color: var(--Primario);
+}
+
+
+.barra{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img{
+    width: 7rem;
+}
+
+.navegacion__botonr,
+.cerrar-menu{
+    display: none;
+}
+
+.navegacion__enlaces{
+    display: block;
+}
+
+.navegacion--enlace{
+    color: var(--Primario);
+    margin: 0 2rem;
+    transition: all 0.3s;
+}
+
+.navegacion--enlace:hover{
+    color: var(--Secundario);
+}
+
+@media (max-width: 768px) {
+    .navegacion__botonr,
+    .cerrar-menu{
+        display: block;
+    }
+
+    input{
+        display: none;
+    }
+
+    .navegacion{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--Secundario);
+        padding: 2rem 0 0 5rem;
+        box-shadow: 0 0 0 100vmax #2224876a;
+        transition: all 0.3s;
+        transform: translateX(100%);
+    }
+
+    .navegacion.visible{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+    .navegacion__enlaces{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+    
+
+    .icon{
+        cursor: pointer;
+        color: var(--Primario);
+    }
+
+    .cerrar-menu{
+        cursor: pointer;
+        background-color: var(--Primario);
+        border: 0;
+        margin: 0 1rem;
+        padding: .5rem 2rem;
+        border-radius: 2rem;
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+
+    .cerrar-menu:hover{
+        background-color: var(--SecundarioOscuro);
+        color: var(--Blanco);
+    }
+
+    
+}
+
+
+/* INFORMACION CLUB */
+
+.informacion{
+    display: grid;
+}
+
+.img__informacion{
+    width: 100%;
+}
+
+.aside{
+    padding: 2rem;
+
+    -webkit-box-shadow: 7px -2px 51px 0px rgba(0,0,0,0.06);
+    -moz-box-shadow: 7px -2px 51px 0px rgba(0,0,0,0.06);
+    box-shadow: 7px -2px 51px 0px rgba(0,0,0,0.06);
+
+}
+
+.widget__deportes{
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--Gris);
+}
+
+.widget__deportes:last-of-type{
+    border: none;
+}
+
+@media (min-width: 768px ) {
+    .informacion{
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+    }
+    
+}
+
+.boton{
+    background-color: var(--Secundario);
+    padding: 1rem;
+    border-radius: .5rem;
+    color: var(--Primario);
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.boton--primario:hover{
+    background-color: var(--Gris);
+    color: var(--Oscuro)
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top: 5rem;
+    background-color: var(--Oscuro);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--Primario);
+    padding: 2rem 0;
+    
+}
+
+svg{
+    width: 2.5rem;
+    margin: 0 1rem;
+}
+
+svg:hover{
+    color: var(--Secundario);
+}
